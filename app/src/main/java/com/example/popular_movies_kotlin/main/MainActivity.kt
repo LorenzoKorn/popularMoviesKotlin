@@ -3,6 +3,7 @@ package com.example.popular_movies_kotlin.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.popular_movies_kotlin.BuildConfig
 import com.example.popular_movies_kotlin.R
 import kotlinx.android.synthetic.main.activity_main.*
 
