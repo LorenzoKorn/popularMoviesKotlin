@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.popular_movies_kotlin.R
 import kotlinx.android.synthetic.main.movie_poster.view.*
 
-class MovieAdapter(private val movies: List<MoviesData.Movie>): RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+class MovieAdapter(private val movies: List<Movie>, private val onClick: (Movie) -> Unit): RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
     private lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ViewHolder {
@@ -28,7 +28,14 @@ class MovieAdapter(private val movies: List<MoviesData.Movie>): RecyclerView.Ada
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun bind(movie: MoviesData.Movie) {
+
+        init {
+            itemView.setOnClickListener {
+                onClick(movies[adapterPosition])
+            }
+        }
+
+        fun bind(movie: Movie) {
             itemView.movie_index.text = (movies.indexOf(movie) + 1).toString()
             Glide.with(context).load(movie.getPosterUrl()).into(itemView.movie_poster)
         }
