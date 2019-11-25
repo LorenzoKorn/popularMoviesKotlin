@@ -3,4 +3,7 @@
     <string name="popular_movies">"The most popular movies of: "</string>
     <string name="year">Year</string>
     <string name="submit">Submit</string>
+    <string name="overview">Overview</string>
+    <string name="empty">empty</string>
+    <string name="rating">★ %s</string>
 </resources>
